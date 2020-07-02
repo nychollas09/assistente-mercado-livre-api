@@ -1,6 +1,5 @@
 package br.com.assistentemercadolivre.api.controller.handler;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -16,7 +15,7 @@ public class HandlerException extends ResponseEntityExceptionHandler {
 	@ExceptionHandler(HttpClientErrorException.class)
 	public @ResponseBody ResponseEntity<ResponseError> handleInvalidParameterException(HttpClientErrorException ex) {
 		ResponseError exceptionError = new ResponseError(ex.getMessage(), ex.getStatusCode().value());
-		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exceptionError);
+		return ResponseEntity.status(ex.getStatusCode()).body(exceptionError);
 	}
 
 }

@@ -13,7 +13,7 @@ import br.com.assistentemercadolivre.api.model.ResponseError;
 public class HandlerException extends ResponseEntityExceptionHandler {
 
 	@ExceptionHandler(HttpClientErrorException.class)
-	public @ResponseBody ResponseEntity<ResponseError> handleInvalidParameterException(HttpClientErrorException ex) {
+	public @ResponseBody ResponseEntity<ResponseError> handleHttpClientErrorException(HttpClientErrorException ex) {
 		ResponseError exceptionError = new ResponseError(ex.getMessage(), ex.getStatusCode().value());
 		return ResponseEntity.status(ex.getStatusCode()).body(exceptionError);
 	}

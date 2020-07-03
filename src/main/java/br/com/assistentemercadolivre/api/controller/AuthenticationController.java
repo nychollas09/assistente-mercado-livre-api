@@ -13,15 +13,17 @@ import br.com.assistentemercadolivre.api.service.AuthenticationService;
 @RequestMapping("api/")
 public class AuthenticationController {
 
-	@Autowired
-	private AuthenticationService service;
+  @Autowired
+  private AuthenticationService service;
 
-	@PostMapping("assistente/auth")
-	public Object authentication(@RequestParam(value = "client_id") String clientId,
-			@RequestParam(value = "client_secret") String clientSecret, @RequestParam(value = "code") String code,
-			@RequestParam(value = "grant_type") String grantType,
-			@RequestParam(value = "redirect_uri") String redirectUri) {
-		return ResponseEntity.ok(service.authentication(clientId, clientSecret, code, grantType, redirectUri));
-	}
+  @PostMapping("assistente/auth")
+  public Object authentication(@RequestParam(value = "client_id") String clientId,
+      @RequestParam(value = "client_secret") String clientSecret,
+      @RequestParam(value = "code") String code,
+      @RequestParam(value = "grant_type") String grantType,
+      @RequestParam(value = "redirect_uri") String redirectUri) {
+    return ResponseEntity
+        .ok(service.authentication(clientId, clientSecret, code, grantType, redirectUri));
+  }
 
 }

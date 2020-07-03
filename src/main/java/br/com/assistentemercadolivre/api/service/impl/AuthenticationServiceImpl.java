@@ -1,9 +1,7 @@
 package br.com.assistentemercadolivre.api.service.impl;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
+import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -28,14 +26,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
   public Object authentication(String clientId, String clientSecret, String code, String grantType,
       String redirectUri) {
     String uri = createUri(clientId, clientSecret, code, grantType, redirectUri);
-    HttpEntity<Object> request = new HttpEntity<>(createHttpHeaders());
-    return this.requestComponent.send(this.restTemplate, uri, request);
-  }
-
-  private HttpHeaders createHttpHeaders() {
-    HttpHeaders headers = new HttpHeaders();
-    headers.setContentType(MediaType.APPLICATION_JSON);
-    return headers;
+    return this.requestComponent.send(this.restTemplate, uri, HttpMethod.POST);
   }
 
   private String createUri(String clientId, String clientSecret, String code, String grantType,

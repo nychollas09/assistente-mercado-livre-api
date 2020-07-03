@@ -12,18 +12,27 @@ public class CategoriesServiceImpl implements CategoriesService {
 
   private RestTemplate restTemplate;
   private RequestComponent requestComponent;
-  private String baseUrl;
+  private String urlSearchAll;
+  private String urlSearchId;
 
   public CategoriesServiceImpl(RestTemplate restTemplate, RequestComponent requestComponent,
-      @Value("${api.mercadolivre.categories}") String baseUrl) {
+      @Value("${api.mercadolivre.categories}") String urlSearchAll,
+      @Value("${api.mercadolivre.categories.id}") String urlSearchId) {
     this.restTemplate = restTemplate;
     this.requestComponent = requestComponent;
-    this.baseUrl = baseUrl;
+    this.urlSearchAll = urlSearchAll;
+    this.urlSearchId = urlSearchId;
   }
 
   @Override
   public Object findAll() {
-    return requestComponent.send(restTemplate, baseUrl, HttpMethod.GET);
+    return requestComponent.send(restTemplate, urlSearchAll, HttpMethod.GET);
+  }
+
+  @Override
+  public Object findById(String categoryId) {
+    String uri = new StringBuilder(urlSearchId).append(categoryId).toString();
+    return requestComponent.send(restTemplate, uri, HttpMethod.GET);
   }
 
 }

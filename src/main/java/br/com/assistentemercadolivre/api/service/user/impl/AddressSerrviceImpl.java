@@ -1,11 +1,11 @@
-package br.com.assistentemercadolivre.api.service.impl;
+package br.com.assistentemercadolivre.api.service.user.impl;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import br.com.assistentemercadolivre.api.service.AddressService;
 import br.com.assistentemercadolivre.api.service.request.RequestComponent;
+import br.com.assistentemercadolivre.api.service.user.AddressService;
 
 @Service
 public class AddressSerrviceImpl implements AddressService {

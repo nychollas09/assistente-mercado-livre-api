@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import br.com.assistentemercadolivre.api.service.AddressService;
+import br.com.assistentemercadolivre.api.service.user.AddressService;
 
 @RestController
 @RequestMapping("api/")

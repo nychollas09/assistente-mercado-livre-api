@@ -1,4 +1,4 @@
-package br.com.assistentemercadolivre.api.service;
+package br.com.assistentemercadolivre.api.service.user;
 
 public interface AuthenticationService {
 

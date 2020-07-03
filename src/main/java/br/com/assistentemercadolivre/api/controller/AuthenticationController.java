@@ -6,8 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import br.com.assistentemercadolivre.api.service.AuthenticationService;
+import br.com.assistentemercadolivre.api.service.user.AuthenticationService;
 
 @RestController
 @RequestMapping("api/")

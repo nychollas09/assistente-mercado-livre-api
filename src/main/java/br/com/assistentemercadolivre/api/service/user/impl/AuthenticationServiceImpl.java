@@ -1,12 +1,12 @@
-package br.com.assistentemercadolivre.api.service.impl;
+package br.com.assistentemercadolivre.api.service.user.impl;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
-import br.com.assistentemercadolivre.api.service.AuthenticationService;
 import br.com.assistentemercadolivre.api.service.request.RequestComponent;
+import br.com.assistentemercadolivre.api.service.user.AuthenticationService;
 
 @Service
 public class AuthenticationServiceImpl implements AuthenticationService {

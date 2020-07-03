@@ -15,7 +15,7 @@ public class AuthenticationController {
   @Autowired
   private AuthenticationService service;
 
-  @PostMapping("assistente/auth")
+  @PostMapping("assistant/auth")
   public Object authentication(@RequestParam(value = "client_id") String clientId,
       @RequestParam(value = "client_secret") String clientSecret,
       @RequestParam(value = "code") String code,

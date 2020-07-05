@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-import br.com.assistentemercadolivre.api.model.ResponseError;
+import br.com.assistentemercadolivre.api.domain.model.ResponseError;
 
 @ControllerAdvice
 public class HandlerException extends ResponseEntityExceptionHandler {

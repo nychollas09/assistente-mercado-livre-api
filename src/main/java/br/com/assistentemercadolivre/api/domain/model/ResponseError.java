@@ -1,4 +1,4 @@
-package br.com.assistentemercadolivre.api.model;
+package br.com.assistentemercadolivre.api.domain.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

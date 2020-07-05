@@ -7,19 +7,24 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import br.com.assistentemercadolivre.api.service.user.AddressService;
+import br.com.assistentemercadolivre.api.service.user.UserService;
 
 @RestController
-@RequestMapping("api/")
-public class AddressController {
+@RequestMapping("api/user")
+public class UserController {
 
   @Autowired
-  private AddressService service;
+  private UserService service;
 
   @GetMapping("address/{client_id}")
-  public ResponseEntity<Object> find(@PathVariable(name = "client_id") String clientId,
+  public ResponseEntity<Object> findAddress(@PathVariable(name = "client_id") String clientId,
       @RequestParam(name = "access_token") String accessToken) {
     return ResponseEntity.ok(service.find(clientId, accessToken));
+  }
+  
+  @GetMapping("me")
+ public ResponseEntity<Object> UserMe(@RequestParam(name = "access_token") String accessToken){
+    return ResponseEntity.ok(service.me(accessToken));
   }
 
 }
